@@ -1,24 +1,42 @@
-# README
+# Project: Lucifer-Dex
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Lucifer-Dex. I am buidling a new portifiolo for Binance Smart Chain wallet.
+Please kindly contribute what you think it'd be better.
 
-Things you may want to cover:
+## Install
 
-* Ruby version
+### Clone the repository
 
-* System dependencies
+shell
+git clone git@github.com:Sodanheang/Lucifer-Dex.git
+cd Lucifer-Dex
 
-* Configuration
+### Check your Ruby version
 
-* Database creation
+shell
+ruby -v
 
-* Database initialization
+The ouput should start with something like ruby 2.4.4
 
-* How to run the test suite
+If not, install the right ruby version using [rvm](https://rvm.io/) (it could take a while):
 
-* Services (job queues, cache servers, search engines, etc.)
+shell
+rvm install 2.4.4
 
-* Deployment instructions
+### Install dependencies
 
-* ...
+Using [Bundler](https://github.com/bundler/bundler)
+
+shell
+bundle
+
+### Initialize the database
+
+shell
+rails db:create db:migrate db:seed
+
+## Serve
+
+shell
+rails s
+The website will be up on [Localhost with Port 3000](http://localhost:3000)
