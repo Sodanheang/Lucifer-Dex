@@ -1,15 +1,25 @@
 class HomePageController < ApplicationController
   def index
-    ceres_scrapper
+    if has_wallet?
+      redirect_to wallet_index_url
+    end
   end
 
-  private
-  
-  def ceres_scrapper
-    url = "https://tools.cerestoken.io/#/tokens"
-    browser = Watir::Browser.new :chrome, headless: true
-    browser.goto(url)
-    parsed_page = Nokogiri::HTML.parse(browser.html)
-    binding.pry
+  def get_wallet_address
+    if params[:address].present?
+      address = params[:address]
+      body = get_wallet_info(address)
+      if(body["status"] == "1")
+        created_address = Wallet.create(address: address)
+        set_wallet_id_sess(created_address.id)
+        redirect_to wallet_index_url
+      else
+        params[:error] = body["result"]
+        render :index
+      end
+    else
+      render :index
+    end
   end
+
 end

@@ -1,2 +1,7 @@
-%p#notice= notice
-%p#alert= alert
+.row
+  .col-md-12.wallet-input-container
+    = form_with url: address_url, method: :post, html: {class: "form-inline wallet-form"} do |form|
+      .form-group
+        - placeholder = params[:error].present? ? params[:error] : "Wallet Address"
+        = form.text_field :address, class: 'form-control input-lg address-input', placeholder: placeholder, required: ""
+        = form.submit "GO!", class: "btn btn-default btn-lg btn-scan"

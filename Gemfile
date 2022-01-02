@@ -5,7 +5,7 @@ ruby '2.5.0'
 
 gem 'puma',                               '~> 3.11'
 gem 'rails',                              '5.2.0'
-gem 'pg',                                 '0.18'
+gem 'pg',                                 '0.21'
 gem 'sass-rails',                         '~> 5.0'
 gem 'coffee-rails',                       '~> 4.2'
 gem 'uglifier',                           '>= 1.3.0'
@@ -20,6 +20,9 @@ gem 'nokogiri',                           '~> 1.12', '>= 1.12.4'
 gem 'httparty',                           '~> 0.19.0'
 gem 'watir',                              '~> 6.19', '>= 6.19.1'
 gem 'webdrivers',                         '~> 4.6', '>= 4.6.1'
+gem 'whenever',                           '~> 1.0'
+gem 'turbolinks',                         '~> 5.2', '>= 5.2.1'
+gem 'rest-client',                        '~> 2.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

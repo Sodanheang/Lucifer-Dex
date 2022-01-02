@@ -1,0 +1,16 @@
+.card{style: "padding-top: 13px; margin-bottom: 20px"}
+  %h3.title All Available Crypto
+.token-wrapper
+  - Token.all.each do |token|
+    .card
+      .media
+        .media-left
+          %a{:href => "javascript:void(0);"}
+            = image_tag token.icon, class: "media-object img-circle"
+        .media-body
+          %h4.media-heading.text-left
+            = "#{token.name}"
+            = link_to add_token_url(token_id: token.id) do
+              %span
+                = token.symbol
+                = image_tag "add.png", size: '22x22'

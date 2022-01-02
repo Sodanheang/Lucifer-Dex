@@ -4,15 +4,29 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}
 
-    %title LuciferDex
+    %title Lucifer Dex
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
     = render 'partials/header'
-    .container
+    .container-fluid
       .row
-        .col-md-12
-          = yield
+        .col-xs-12.col-md-3
+          = render 'partials/sidebar'
+        .col-xs-12.col-md-9
+          .address-wrapper
+            .address-container
+              .row.text-center
+                %a{:href => "javascript:void(0);"}
+                  .col-xs-12.col-md-4.menu-header.tab-active
+                    %h4 Wallet
+                %a{:href => "javascript:void(0);"}
+                  .col-xs-12.col-md-4.menu-header
+                    %h4 Wishlist
+                %a{:href => "javascript:void(0);"}
+                  .col-xs-12.col-md-4.menu-header
+                    %h4 Crypto Info
+              = yield

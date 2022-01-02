@@ -1,0 +1,47 @@
+.row.wallet-wrapper
+  .col-xs-12.col-md-8
+    .card-asset
+      .header
+        %h4
+          %span= @wallet.address
+          = image_tag "wallet.png", size: '35x35'
+      .body
+        %p
+          = link_to "https://bscscan.com/address/#{@wallet.address}", target: :_blank do
+            = "View in explorer"
+        %h1.text-center
+          = "$#{@net_worth.round(2)}"
+        %h4.text-center Asset Net Worth
+  .col-xs-12.col-md-4
+    .wrapper-card
+      .card-asset
+        .header
+          %h4
+            = @bnb_token.name
+            = image_tag @bnb_token.icon, size: '35x35'
+        .body
+          %p
+            = "1 BNB = $#{@bnb_price}"
+          %h1.text-right
+            = "#{@wallet_bnb_balance} BNB"
+          %h4.text-right= "$#{@bnb_total_balance}"
+
+      - @all_token_in_wallet.each do |wallet_token|
+        - token = wallet_token.token
+        .row
+          .col-xs-12.col-md-10
+            .card-asset
+              .header
+                %h4
+                  = token.name
+                  = image_tag token.icon, size: '35x35'
+              .body
+                %p
+                  = "1 #{token.symbol} = $#{@wallet_tokens[token.id][:price]}"
+                %h1.text-right
+                  = "#{@wallet_tokens[token.id][:balance]} #{token.symbol}"
+                %h4.text-right= "$#{@wallet_tokens[token.id][:total]}"
+          .col-xs-12.col-md-2
+            = link_to remove_token_url(token_id: token.id) do
+              .card-asset.card-delete
+                = image_tag "delete.png", size: '35x35'

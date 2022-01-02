@@ -1,0 +1,25 @@
+.navbar-default {
+  background-color: #d32f2f;
+  border-color: #d32f2f;
+  height: 70px;
+
+  .navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    padding-top: 25px;
+  }
+
+  .navbar-brand{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #ffffff;
+    float: none;
+    font-size: 35px;
+    
+    &:hover{
+      color: #ffffff;
+    }
+  }
+}

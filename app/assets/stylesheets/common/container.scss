@@ -1,0 +1,58 @@
+.address-container{
+  background-color: #e53935;
+  width: 100%;
+  height: 91vh;
+  border-radius: 15px;
+  padding: 0px 15px;
+
+  a{
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
+
+.wallet-input-container{
+  position: relative;
+  width: 100%;
+  height: 85.7vh;
+  text-align: center;
+
+  .wallet-form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100px;
+    -webkit-transform: translate(-50%, -50%);  
+    transform: translate(-50%, -50%);
+
+    .address-input{
+      width: 600px;
+      background-color: initial;
+      border: none;
+      border-bottom: 1px solid #e57373;
+      border-radius: 0px;
+      color: #ffffff;
+      box-shadow: none;
+    }
+
+    .btn-scan{
+      color: #ffffff;
+      background-color: #ef5350;
+      border-radius: 15px;
+      transition: 0.3s;
+
+      &:hover{
+        border-color: #c62828;
+        transform:scale(1.02,1.02);
+        -webkit-transform:scale(1.02,1.02);
+        -moz-transform:scale(1.02,1.02);
+      }
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #eeeeee;
+      opacity: 1; /* Firefox */
+    }
+  }
+}

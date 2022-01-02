@@ -1,0 +1,15 @@
+.menu-header{
+  height: 50px;
+  padding-top: 7px;
+  transition: 0.3s;
+
+  &:hover{
+    background-color: #b71c1c;
+    transform:scale(1.02,1.02);
+    -webkit-transform:scale(1.02,1.02);
+    -moz-transform:scale(1.02,1.02);
+  }
+  &.tab-active{
+    background-color: #b71c1c;
+  }
+}
